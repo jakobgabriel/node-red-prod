@@ -9,10 +9,45 @@
     {
         "id": "64ec2cddfbef27ae",
         "type": "tab",
-        "label": "Flow 2",
+        "label": "Flow 2 - new test flow.",
         "disabled": false,
-        "info": "",
+        "info": "This is some flow description that we want to see in the repo.",
         "env": []
+    },
+    {
+        "id": "1cb002ec5750c6ee",
+        "type": "group",
+        "z": "64ec2cddfbef27ae",
+        "name": "group 1",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "cea6bb78cdaf6474",
+            "02e9a6ed882bd0bd"
+        ],
+        "x": 114,
+        "y": 119,
+        "w": 692,
+        "h": 82
+    },
+    {
+        "id": "c1cc35f40c6ee9eb",
+        "type": "group",
+        "z": "64ec2cddfbef27ae",
+        "name": "group 2",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "5db16f7b2afb94e3",
+            "521b806fe200e28b",
+            "13536ed5b5244999"
+        ],
+        "x": 114,
+        "y": 239,
+        "w": 792,
+        "h": 122
     },
     {
         "id": "3cc11d24.ff01a2",
@@ -73,6 +108,7 @@
         "id": "cea6bb78cdaf6474",
         "type": "inject",
         "z": "64ec2cddfbef27ae",
+        "g": "1cb002ec5750c6ee",
         "name": "",
         "props": [
             {
@@ -90,8 +126,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 300,
-        "y": 140,
+        "x": 220,
+        "y": 160,
         "wires": [
             [
                 "02e9a6ed882bd0bd"
@@ -104,14 +140,15 @@
         "z": "64ec2cddfbef27ae",
         "name": "another workflow",
         "info": "",
-        "x": 320,
-        "y": 80,
+        "x": 200,
+        "y": 60,
         "wires": []
     },
     {
         "id": "02e9a6ed882bd0bd",
         "type": "debug",
         "z": "64ec2cddfbef27ae",
+        "g": "1cb002ec5750c6ee",
         "name": "debug 2",
         "active": true,
         "tosidebar": true,
@@ -120,8 +157,67 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 480,
-        "y": 140,
+        "x": 700,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "5db16f7b2afb94e3",
+        "type": "inject",
+        "z": "64ec2cddfbef27ae",
+        "g": "c1cc35f40c6ee9eb",
+        "name": "timestamp inject",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 320,
+        "wires": [
+            [
+                "521b806fe200e28b"
+            ]
+        ]
+    },
+    {
+        "id": "521b806fe200e28b",
+        "type": "debug",
+        "z": "64ec2cddfbef27ae",
+        "g": "c1cc35f40c6ee9eb",
+        "name": "debug 3 - full msg object",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "13536ed5b5244999",
+        "type": "comment",
+        "z": "64ec2cddfbef27ae",
+        "g": "c1cc35f40c6ee9eb",
+        "name": "comment about the group 2",
+        "info": "",
+        "x": 280,
+        "y": 280,
         "wires": []
     }
 ]
