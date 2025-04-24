@@ -7,6 +7,14 @@
         "info": ""
     },
     {
+        "id": "64ec2cddfbef27ae",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "3cc11d24.ff01a2",
         "type": "comment",
         "z": "f6f2187d.f17ca8",
@@ -59,6 +67,61 @@
         "statusType": "auto",
         "x": 300,
         "y": 300,
+        "wires": []
+    },
+    {
+        "id": "cea6bb78cdaf6474",
+        "type": "inject",
+        "z": "64ec2cddfbef27ae",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 300,
+        "y": 140,
+        "wires": [
+            [
+                "02e9a6ed882bd0bd"
+            ]
+        ]
+    },
+    {
+        "id": "ef08cb82a5d6c2d4",
+        "type": "comment",
+        "z": "64ec2cddfbef27ae",
+        "name": "another workflow",
+        "info": "",
+        "x": 320,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "02e9a6ed882bd0bd",
+        "type": "debug",
+        "z": "64ec2cddfbef27ae",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 140,
         "wires": []
     }
 ]
